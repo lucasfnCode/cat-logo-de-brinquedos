@@ -2,7 +2,6 @@ package com.br.semesperanca.loja_de_brinquedos.service;
 
 import com.br.semesperanca.loja_de_brinquedos.entity.Toy;
 import com.br.semesperanca.loja_de_brinquedos.repository.ToyRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +10,11 @@ import java.util.Optional;
 @Service
 public class ToyService {
 
-    @Autowired
-    private ToyRepository toyRepository;
+    private final ToyRepository toyRepository;
+
+    public ToyService(ToyRepository toyRepository) {
+        this.toyRepository = toyRepository;
+    }
 
     public Toy saveToy(Toy toy) {
         return toyRepository.save(toy);

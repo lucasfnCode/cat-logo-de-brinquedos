@@ -2,7 +2,6 @@ package com.br.semesperanca.loja_de_brinquedos.controller;
 
 import com.br.semesperanca.loja_de_brinquedos.entity.Toy;
 import com.br.semesperanca.loja_de_brinquedos.service.ToyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +12,12 @@ import java.util.List;
 @RequestMapping("/toys")
 public class ToyController {
 
-    @Autowired
-    private ToyService toyService;
-    
+    private final ToyService toyService;
+
+    public ToyController(ToyService toyService) {
+        this.toyService = toyService;
+    }
+
     @PostMapping
     public ResponseEntity<Toy> createToy(@RequestBody Toy toy) {
         return ResponseEntity.status(HttpStatus.CREATED).body(toyService.saveToy(toy));
