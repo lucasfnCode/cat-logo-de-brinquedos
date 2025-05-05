@@ -13,7 +13,7 @@ public class Category {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "category")
     private List<Toy> toys;
 
     public void setId(Integer id) {

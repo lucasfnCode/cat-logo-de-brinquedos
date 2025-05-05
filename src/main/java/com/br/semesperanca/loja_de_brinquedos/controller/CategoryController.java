@@ -4,9 +4,7 @@ import com.br.semesperanca.loja_de_brinquedos.entity.Category;
 import com.br.semesperanca.loja_de_brinquedos.service.CategoryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,8 +18,23 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
+    @PostMapping
+    public ResponseEntity<Category> createCategory(@RequestBody Category category) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.saveCategory(category));
+    }
+
+    @PutMapping("/{idCategory}")
+    public ResponseEntity<Category> updateCategory(@PathVariable Integer idCategory, @RequestBody Category category) {
+        return ResponseEntity.status(HttpStatus.OK).body(categoryService.updateCategory(idCategory, category));
+    }
+
     @GetMapping
     public ResponseEntity<List<Category>> listAllCategories() {
         return ResponseEntity.status(HttpStatus.OK).body(categoryService.getAllCategories());
+    }
+
+    @GetMapping("/{idCategory}")
+    public ResponseEntity<Category> findCotegoryById(@PathVariable Integer idCategory)  {
+        return ResponseEntity.status(HttpStatus.OK).body(categoryService.getCategoryById(idCategory));
     }
 }
