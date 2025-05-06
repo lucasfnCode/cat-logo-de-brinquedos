@@ -1,7 +1,7 @@
-package com.br.semesperanca.loja_de_brinquedos.controller;
+package com.br.semesperanca.loja_de_brinquedos.application.controller;
 
-import com.br.semesperanca.loja_de_brinquedos.entity.Category;
-import com.br.semesperanca.loja_de_brinquedos.service.CategoryService;
+import com.br.semesperanca.loja_de_brinquedos.domain.entity.Category;
+import com.br.semesperanca.loja_de_brinquedos.domain.service.CategoryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.br.semesperanca.loja_de_brinquedos.entity;
+package com.br.semesperanca.loja_de_brinquedos.domain.entity;
 
 import jakarta.persistence.*;
 

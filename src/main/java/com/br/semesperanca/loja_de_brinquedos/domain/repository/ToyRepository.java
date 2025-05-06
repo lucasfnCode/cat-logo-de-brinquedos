@@ -1,6 +1,6 @@
-package com.br.semesperanca.loja_de_brinquedos.repository;
+package com.br.semesperanca.loja_de_brinquedos.domain.repository;
 
-import com.br.semesperanca.loja_de_brinquedos.entity.Toy;
+import com.br.semesperanca.loja_de_brinquedos.domain.entity.Toy;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

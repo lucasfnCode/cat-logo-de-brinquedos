@@ -1,4 +1,4 @@
-package com.br.semesperanca.loja_de_brinquedos.entity;
+package com.br.semesperanca.loja_de_brinquedos.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.MappedSuperclass;

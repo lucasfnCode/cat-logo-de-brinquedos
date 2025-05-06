@@ -1,7 +1,7 @@
-package com.br.semesperanca.loja_de_brinquedos.service;
+package com.br.semesperanca.loja_de_brinquedos.domain.service;
 
-import com.br.semesperanca.loja_de_brinquedos.entity.Category;
-import com.br.semesperanca.loja_de_brinquedos.repository.CategoryRepository;
+import com.br.semesperanca.loja_de_brinquedos.domain.entity.Category;
+import com.br.semesperanca.loja_de_brinquedos.domain.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
