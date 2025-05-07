@@ -2,6 +2,7 @@ package com.br.semesperanca.loja_de_brinquedos.domain.service;
 
 import com.br.semesperanca.loja_de_brinquedos.application.model.input.category.CategoryInput;
 import com.br.semesperanca.loja_de_brinquedos.application.model.output.CategoryOutput;
+import com.br.semesperanca.loja_de_brinquedos.application.model.output.ToyOutput;
 import com.br.semesperanca.loja_de_brinquedos.domain.entity.Category;
 import com.br.semesperanca.loja_de_brinquedos.domain.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
@@ -13,9 +14,11 @@ import java.util.Optional;
 public class CategoryService {
 
     private final CategoryRepository categoryRepository;
+    private final ToyService toyService;
 
-    public CategoryService(CategoryRepository categoryRepository) {
+    public CategoryService(CategoryRepository categoryRepository, ToyService toyService) {
         this.categoryRepository = categoryRepository;
+        this.toyService = toyService;
     }
 
     public CategoryOutput saveCategory(CategoryInput category) {
@@ -39,6 +42,12 @@ public class CategoryService {
             return assemblerCategoryOutput(categoryOptional.get());
         }
         return null;
+    }
+
+    public List<ToyOutput> getAllToysByCategory(Integer idCategory) {
+        Category category = categoryRepository.findById(idCategory).orElseThrow();
+
+        return category.getToys().stream().map(toyService::assemblerToyOutput).toList();
     }
 
     private Category assemblerCategoryEntity(CategoryInput category) {

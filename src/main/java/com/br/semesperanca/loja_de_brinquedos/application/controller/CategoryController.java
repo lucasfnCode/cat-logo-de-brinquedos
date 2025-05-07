@@ -2,6 +2,7 @@ package com.br.semesperanca.loja_de_brinquedos.application.controller;
 
 import com.br.semesperanca.loja_de_brinquedos.application.model.input.category.CategoryInput;
 import com.br.semesperanca.loja_de_brinquedos.application.model.output.CategoryOutput;
+import com.br.semesperanca.loja_de_brinquedos.application.model.output.ToyOutput;
 import com.br.semesperanca.loja_de_brinquedos.domain.service.CategoryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,5 +38,10 @@ public class CategoryController {
     @GetMapping("/{idCategory}")
     public ResponseEntity<CategoryOutput> findCotegoryById(@PathVariable Integer idCategory)  {
         return ResponseEntity.status(HttpStatus.OK).body(categoryService.getCategoryById(idCategory));
+    }
+
+    @GetMapping("/listToysByCategory/{idCategory}")
+    public ResponseEntity<List<ToyOutput>> listAllToysByCategory(@PathVariable Integer idCategory)  {
+        return ResponseEntity.status(HttpStatus.OK).body(categoryService.getAllToysByCategory(idCategory));
     }
 }

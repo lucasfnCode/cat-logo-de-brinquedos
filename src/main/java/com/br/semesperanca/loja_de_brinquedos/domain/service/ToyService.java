@@ -58,7 +58,7 @@ public class ToyService {
         );
     }
 
-    private ToyOutput assemblerToyOutput(Toy toy) {
+    protected ToyOutput assemblerToyOutput(Toy toy) {
         CategoryOutput categoryOutput = new CategoryOutput(toy.getCategory().getId(),toy.getCategory().getName());
 
         return new ToyOutput(
