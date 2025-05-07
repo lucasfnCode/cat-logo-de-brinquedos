@@ -16,6 +16,13 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private List<Toy> toys;
 
+    public Category(String name) {
+        this.name = name;
+    }
+
+    public Category() {
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }

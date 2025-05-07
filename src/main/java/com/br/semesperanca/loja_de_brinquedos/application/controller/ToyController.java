@@ -1,8 +1,7 @@
 package com.br.semesperanca.loja_de_brinquedos.application.controller;
 
-import com.br.semesperanca.loja_de_brinquedos.application.model.input.ToyInput;
+import com.br.semesperanca.loja_de_brinquedos.application.model.input.toy.ToyInput;
 import com.br.semesperanca.loja_de_brinquedos.application.model.output.ToyOutput;
-import com.br.semesperanca.loja_de_brinquedos.domain.entity.Toy;
 import com.br.semesperanca.loja_de_brinquedos.domain.service.ToyService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

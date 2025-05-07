@@ -1,6 +1,7 @@
 package com.br.semesperanca.loja_de_brinquedos.application.controller;
 
-import com.br.semesperanca.loja_de_brinquedos.domain.entity.Category;
+import com.br.semesperanca.loja_de_brinquedos.application.model.input.category.CategoryInput;
+import com.br.semesperanca.loja_de_brinquedos.application.model.output.CategoryOutput;
 import com.br.semesperanca.loja_de_brinquedos.domain.service.CategoryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,22 +20,22 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<Category> createCategory(@RequestBody Category category) {
+    public ResponseEntity<CategoryOutput> createCategory(@RequestBody CategoryInput category) {
         return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.saveCategory(category));
     }
 
     @PutMapping("/{idCategory}")
-    public ResponseEntity<Category> updateCategory(@PathVariable Integer idCategory, @RequestBody Category category) {
+    public ResponseEntity<CategoryOutput> updateCategory(@PathVariable Integer idCategory, @RequestBody CategoryInput category) {
         return ResponseEntity.status(HttpStatus.OK).body(categoryService.updateCategory(idCategory, category));
     }
 
     @GetMapping
-    public ResponseEntity<List<Category>> listAllCategories() {
+    public ResponseEntity<List<CategoryOutput>> listAllCategories() {
         return ResponseEntity.status(HttpStatus.OK).body(categoryService.getAllCategories());
     }
 
     @GetMapping("/{idCategory}")
-    public ResponseEntity<Category> findCotegoryById(@PathVariable Integer idCategory)  {
+    public ResponseEntity<CategoryOutput> findCotegoryById(@PathVariable Integer idCategory)  {
         return ResponseEntity.status(HttpStatus.OK).body(categoryService.getCategoryById(idCategory));
     }
 }

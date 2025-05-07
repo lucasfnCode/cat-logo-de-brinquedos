@@ -1,4 +1,4 @@
-package com.br.semesperanca.loja_de_brinquedos.application.model.input;
+package com.br.semesperanca.loja_de_brinquedos.application.model.input.toy;
 
 public record ToyInput(
     String code,
@@ -7,5 +7,5 @@ public record ToyInput(
     String image,
     Double price,
     String details,
-    CategoryInput category
+    CategoryInputToy category
 ) {}

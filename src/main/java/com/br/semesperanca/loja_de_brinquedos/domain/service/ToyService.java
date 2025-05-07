@@ -1,6 +1,6 @@
 package com.br.semesperanca.loja_de_brinquedos.domain.service;
 
-import com.br.semesperanca.loja_de_brinquedos.application.model.input.ToyInput;
+import com.br.semesperanca.loja_de_brinquedos.application.model.input.toy.ToyInput;
 import com.br.semesperanca.loja_de_brinquedos.application.model.output.CategoryOutput;
 import com.br.semesperanca.loja_de_brinquedos.application.model.output.ToyOutput;
 import com.br.semesperanca.loja_de_brinquedos.domain.entity.Category;
