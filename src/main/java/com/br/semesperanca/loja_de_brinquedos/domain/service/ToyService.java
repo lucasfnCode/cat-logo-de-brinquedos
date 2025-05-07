@@ -20,15 +20,15 @@ public class ToyService {
         this.toyRepository = toyRepository;
     }
 
-    public Toy saveToy(ToyInput toy) {
+    public ToyOutput saveToy(ToyInput toy) {
         Toy toyEntity = assemblerToyEntity(toy);
-        return toyRepository.save(toyEntity);
+        return assemblerToyOutput(toyRepository.save(toyEntity));
     }
 
-    public Toy updateToy(Integer idToy,ToyInput toy) {
+    public ToyOutput updateToy(Integer idToy,ToyInput toy) {
         Toy toyEntity = assemblerToyEntity(toy);
         toyEntity.setId(idToy);
-        return toyRepository.save(toyEntity);
+        return assemblerToyOutput(toyRepository.save(toyEntity));
     }
 
     public List<ToyOutput> getAllToys() {

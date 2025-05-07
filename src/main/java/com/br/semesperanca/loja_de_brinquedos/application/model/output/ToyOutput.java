@@ -9,5 +9,4 @@ public record ToyOutput(
         Double price,
         String details,
         CategoryOutput category
-) {
-}
+) {}

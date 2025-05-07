@@ -21,12 +21,12 @@ public class ToyController {
     }
 
     @PostMapping
-    public ResponseEntity<Toy> createToy(@RequestBody ToyInput toy) {
+    public ResponseEntity<ToyOutput> createToy(@RequestBody ToyInput toy) {
         return ResponseEntity.status(HttpStatus.CREATED).body(toyService.saveToy(toy));
     }
 
     @PutMapping("/{idToy}")
-    public ResponseEntity<Toy> updateToy(@PathVariable Integer idToy, @RequestBody ToyInput toy) {
+    public ResponseEntity<ToyOutput> updateToy(@PathVariable Integer idToy, @RequestBody ToyInput toy) {
         return ResponseEntity.status(HttpStatus.OK).body(toyService.updateToy(idToy, toy));
     }
 
