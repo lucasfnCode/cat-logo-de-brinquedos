@@ -14,4 +14,4 @@
    - `./mvnw.cmd spring-boot:run`
    
  - ### Acessar o endereço:
-   - [http://localhost:8080/toys](http://localhost:8080/swagger-ui.html)
+   - [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
