@@ -4,6 +4,8 @@ import com.br.semesperanca.loja_de_brinquedos.application.model.input.category.C
 import com.br.semesperanca.loja_de_brinquedos.application.model.output.CategoryOutput;
 import com.br.semesperanca.loja_de_brinquedos.application.model.output.ToyOutput;
 import com.br.semesperanca.loja_de_brinquedos.domain.service.CategoryService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/categories")
+@Tag(name= "Category")
 public class CategoryController {
 
     private final CategoryService categoryService;
