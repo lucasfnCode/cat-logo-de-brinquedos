@@ -13,5 +13,5 @@
  - ### Run (em qualquer IDE de sua preferência)
    - `./mvnw.cmd spring-boot:run`
    
- - ### Realizar requisições para o endpoint desejado
-   - exemplo: `http://localhost:8080/toys`
+ - ### Acessar o endereço:
+   - [http://localhost:8080/toys](http://localhost:8080/swagger-ui.html)
