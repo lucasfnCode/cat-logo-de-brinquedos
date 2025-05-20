@@ -36,11 +36,21 @@ public class ToyService {
     }
 
     public ToyOutput getToyById(Integer idToy) {
-        Optional<Toy> toyOptional = toyRepository.findById(idToy);
+        Optional<Toy> toyOptional = getOptionalToy(idToy);
+        return toyOptional.map(this::assemblerToyOutput).orElse(null);
+    }
+
+    private Optional<Toy> getOptionalToy(Integer idToy) {
+        return toyRepository.findById(idToy);
+    }
+
+    public void deleteToyById(Integer idToy) {
+        Optional<Toy> toyOptional = getOptionalToy(idToy);
         if (toyOptional.isPresent()) {
-            return assemblerToyOutput(toyOptional.get());
+            toyRepository.deleteById(idToy);
+        } else {
+            throw new RuntimeException("Toy not found");
         }
-        return null;
     }
 
     private Toy assemblerToyEntity(ToyInput toy) {

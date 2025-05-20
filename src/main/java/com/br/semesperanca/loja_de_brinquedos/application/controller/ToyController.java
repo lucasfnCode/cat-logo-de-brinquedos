@@ -40,4 +40,10 @@ public class ToyController {
     public ResponseEntity<ToyOutput> findToyById(@PathVariable Integer idToy) {
         return ResponseEntity.status(HttpStatus.OK).body(toyService.getToyById(idToy));
     }
+
+    @DeleteMapping("/{idToy}")
+    public ResponseEntity<?> deleteToyById(@PathVariable Integer idToy) {
+        toyService.deleteToyById(idToy);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 }
