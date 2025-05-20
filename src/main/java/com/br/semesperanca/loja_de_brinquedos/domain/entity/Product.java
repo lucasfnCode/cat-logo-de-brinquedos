@@ -1,6 +1,7 @@
 package com.br.semesperanca.loja_de_brinquedos.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Lob;
 import jakarta.persistence.MappedSuperclass;
 
 
@@ -17,6 +18,7 @@ public abstract class Product {
     protected String brand;
 
     @JsonProperty("image")
+    @Lob
     protected String image;
 
     @JsonProperty("price")
