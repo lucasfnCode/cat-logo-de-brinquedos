@@ -1,10 +1,9 @@
 package com.br.semesperanca.loja_de_brinquedos.application.controller;
 
 import com.br.semesperanca.loja_de_brinquedos.application.model.input.category.CategoryInput;
-import com.br.semesperanca.loja_de_brinquedos.application.model.output.CategoryOutput;
-import com.br.semesperanca.loja_de_brinquedos.application.model.output.ToyOutput;
+import com.br.semesperanca.loja_de_brinquedos.application.model.output.category.CategoryOutput;
+import com.br.semesperanca.loja_de_brinquedos.application.model.output.toy.ToyOutput;
 import com.br.semesperanca.loja_de_brinquedos.domain.service.CategoryService;
-import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

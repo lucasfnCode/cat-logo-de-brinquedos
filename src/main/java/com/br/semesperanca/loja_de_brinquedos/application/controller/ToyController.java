@@ -1,7 +1,7 @@
 package com.br.semesperanca.loja_de_brinquedos.application.controller;
 
 import com.br.semesperanca.loja_de_brinquedos.application.model.input.toy.ToyInput;
-import com.br.semesperanca.loja_de_brinquedos.application.model.output.ToyOutput;
+import com.br.semesperanca.loja_de_brinquedos.application.model.output.toy.ToyOutput;
 import com.br.semesperanca.loja_de_brinquedos.domain.service.ToyService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;

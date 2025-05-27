@@ -1,8 +1,8 @@
 package com.br.semesperanca.loja_de_brinquedos.domain.service;
 
 import com.br.semesperanca.loja_de_brinquedos.application.model.input.category.CategoryInput;
-import com.br.semesperanca.loja_de_brinquedos.application.model.output.CategoryOutput;
-import com.br.semesperanca.loja_de_brinquedos.application.model.output.ToyOutput;
+import com.br.semesperanca.loja_de_brinquedos.application.model.output.category.CategoryOutput;
+import com.br.semesperanca.loja_de_brinquedos.application.model.output.toy.ToyOutput;
 import com.br.semesperanca.loja_de_brinquedos.domain.entity.Category;
 import com.br.semesperanca.loja_de_brinquedos.domain.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
@@ -38,10 +38,7 @@ public class CategoryService {
 
     public CategoryOutput getCategoryById(Integer idCategory) {
         Optional<Category> categoryOptional = categoryRepository.findById(idCategory);
-        if (categoryOptional.isPresent()) {
-            return assemblerCategoryOutput(categoryOptional.get());
-        }
-        return null;
+        return categoryOptional.map(this::assemblerCategoryOutput).orElse(null);
     }
 
     public List<ToyOutput> getAllToysByCategory(Integer idCategory) {
@@ -51,10 +48,10 @@ public class CategoryService {
     }
 
     private Category assemblerCategoryEntity(CategoryInput category) {
-        return new Category(category.name());
+        return new Category(category.name(), category.image());
     }
 
     private CategoryOutput assemblerCategoryOutput(Category category) {
-        return new CategoryOutput(category.getId(),category.getName());
+        return new CategoryOutput(category.getId(),category.getName(), category.getImage());
     }
 }

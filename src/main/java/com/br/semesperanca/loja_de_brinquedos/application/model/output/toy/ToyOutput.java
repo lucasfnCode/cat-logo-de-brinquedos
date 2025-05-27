@@ -1,4 +1,4 @@
-package com.br.semesperanca.loja_de_brinquedos.application.model.output;
+package com.br.semesperanca.loja_de_brinquedos.application.model.output.toy;
 
 public record ToyOutput(
         Integer id,
@@ -8,5 +8,5 @@ public record ToyOutput(
         String image,
         Double price,
         String details,
-        CategoryOutput category
+        CategoryOutputToy category
 ) {}

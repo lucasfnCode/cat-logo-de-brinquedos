@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
-@Entity
+@Entity(name = "categories")
 public class Category {
 
     @Id
@@ -13,11 +13,15 @@ public class Category {
 
     private String name;
 
+    @Lob
+    private String image;
+
     @OneToMany(mappedBy = "category")
     private List<Toy> toys;
 
-    public Category(String name) {
+    public Category(String name, String image) {
         this.name = name;
+        this.image = image;
     }
 
     public Category() {
@@ -45,5 +49,13 @@ public class Category {
 
     public void setToys(List<Toy> toys) {
         this.toys = toys;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
